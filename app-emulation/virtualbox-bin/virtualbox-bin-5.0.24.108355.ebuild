@@ -68,7 +68,6 @@ RDEPEND="!!app-emulation/virtualbox
 		chm? ( dev-libs/expat )
 	)
 	dev-libs/libxml2
-	sys-fs/lvm2
 	x11-libs/libXau
 	x11-libs/libX11
 	x11-libs/libXt
