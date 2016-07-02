@@ -111,55 +111,78 @@ QA_TEXTRELS_x86="opt/VirtualBox/VBoxGuestPropSvc.so
 	opt/VirtualBox/VBoxOGLhostcrutil.so
 	opt/VirtualBox/VBoxNetDHCP.so
 	opt/VirtualBox/VBoxGuestControlSvc.so"
-QA_PRESTRIPPED="opt/VirtualBox/VBoxDD.so
-	opt/VirtualBox/VBoxDD2.so
-	opt/VirtualBox/VBoxDDU.so
-	opt/VirtualBox/VBoxDbg.so
-	opt/VirtualBox/VBoxGuestControlSvc.so
-	opt/VirtualBox/VBoxGuestPropSvc.so
-	opt/VirtualBox/VBoxHeadless
-	opt/VirtualBox/VBoxHeadless.so
-	opt/VirtualBox/VBoxKeyboard.so
-	opt/VirtualBox/VBoxManage
-	opt/VirtualBox/VBoxNetAdpCtl
-	opt/VirtualBox/VBoxNetDHCP
-	opt/VirtualBox/VBoxNetDHCP.so
-	opt/VirtualBox/VBoxOGLhostcrutil.so
-	opt/VirtualBox/VBoxOGLhosterrorspu.so
-	opt/VirtualBox/VBoxOGLrenderspu.so
-	opt/VirtualBox/VBoxPython.so
-	opt/VirtualBox/VBoxPython2_7.so
-	opt/VirtualBox/VBoxREM.so
-	opt/VirtualBox/VBoxREM32.so
-	opt/VirtualBox/VBoxREM64.so
-	opt/VirtualBox/VBoxRT.so
-	opt/VirtualBox/VBoxSDL
-	opt/VirtualBox/VBoxSDL.so
-	opt/VirtualBox/VBoxSVC
-	opt/VirtualBox/VBoxSettings.so
-	opt/VirtualBox/VBoxSharedClipboard.so
-	opt/VirtualBox/VBoxSharedCrOpenGL.so
-	opt/VirtualBox/VBoxSharedFolders.so
-	opt/VirtualBox/VBoxTestOGL
-	opt/VirtualBox/VBoxTunctl
-	opt/VirtualBox/VBoxVMM.so
-	opt/VirtualBox/VBoxVRDP.so
-	opt/VirtualBox/VBoxXPCOM.so
-	opt/VirtualBox/VBoxXPCOMC.so
-	opt/VirtualBox/VBoxXPCOMIPCD
-	opt/VirtualBox/VRDPAuth.so
+QA_PRESTRIPPED="opt/VirtualBox/VirtualBox.so
 	opt/VirtualBox/VirtualBox
-	opt/VirtualBox/VirtualBox.so
-	opt/VirtualBox/accessible/libqtaccessiblewidgets.so
-	opt/VirtualBox/components/VBoxC.so
-	opt/VirtualBox/components/VBoxSVCM.so
-	opt/VirtualBox/components/VBoxXPCOMIPCC.so
-	opt/VirtualBox/kchmviewer
-	opt/VirtualBox/libQtCoreVBox.so.4
-	opt/VirtualBox/libQtGuiVBox.so.4
-	opt/VirtualBox/libQtNetworkVBox.so.4
+	opt/VirtualBox/VBoxXPCOM.so
+	opt/VirtualBox/VBoxXPCOMIPCD
+	opt/VirtualBox/VBoxXPCOMC.so
+	opt/VirtualBox/VBoxVMM.so
+	opt/VirtualBox/VBoxTunctl
+	opt/VirtualBox/VBoxTestOGL
+	opt/VirtualBox/VBoxSVC
+	opt/VirtualBox/VBoxSharedFolders.so
+	opt/VirtualBox/VBoxSharedCrOpenGL.so
+	opt/VirtualBox/VBoxSharedClipboard.so
+	opt/VirtualBox/VBoxSDL.so
+	opt/VirtualBox/VBoxSDL
+	opt/VirtualBox/VBoxRT.so
+	opt/VirtualBox/VBoxREM.so
+	opt/VirtualBox/VBoxPython.so
+	opt/VirtualBox/VBoxOGLrenderspu.so
+	opt/VirtualBox/VBoxOGLhosterrorspu.so
+	opt/VirtualBox/VBoxOGLhostcrutil.so
+	opt/VirtualBox/VBoxNetDHCP.so
+	opt/VirtualBox/VBoxNetDHCP
+	opt/VirtualBox/VBoxNetAdpCtl
+	opt/VirtualBox/VBoxManage
+	opt/VirtualBox/VBoxKeyboard.so
+	opt/VirtualBox/VBoxHeadless.so
+	opt/VirtualBox/VBoxHeadless
+	opt/VirtualBox/VBoxGuestPropSvc.so
+	opt/VirtualBox/VBoxGuestControlSvc.so
+	opt/VirtualBox/VBoxDDU.so
+	opt/VirtualBox/VBoxDD.so
+	opt/VirtualBox/VBoxDD2.so
+	opt/VirtualBox/VBoxDbg.so
 	opt/VirtualBox/libQtOpenGLVBox.so.4
-	opt/VirtualBox/vboxwebsrv"
+	opt/VirtualBox/libQtGuiVBox.so.4
+	opt/VirtualBox/libQtCoreVBox.so.4
+	opt/VirtualBox/components/VBoxXPCOMIPCC.so
+	opt/VirtualBox/components/VBoxSVCM.so
+	opt/VirtualBox/components/VBoxC.so
+	opt/VirtualBox/accessible/libqtaccessiblewidgets.so
+	opt/VirtualBox/kchmviewer
+	opt/VirtualBox/VBoxVolInfo
+	opt/VirtualBox/VBoxNetNAT.so
+	opt/VirtualBox/VBoxNetNAT
+	opt/VirtualBox/vbox-img
+	opt/VirtualBox/VBoxHostChannel.so
+	opt/VirtualBox/VBoxExtPackHelperApp
+	opt/VirtualBox/VBoxDTrace
+	opt/VirtualBox/VBoxDragAndDropSvc.so
+	opt/VirtualBox/VBoxBalloonCtrl
+	opt/VirtualBox/VBoxAutostart
+	opt/VirtualBox/VBoxAuth.so
+	opt/VirtualBox/VBoxAuthSimple.so
+	opt/VirtualBox/libvboxjxpcom.so
+	opt/VirtualBox/helpers/generate_service_file
+	opt/VirtualBox/DbgPlugInDiggers.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxPciRawR3.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxPciRawDrv.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxEhciR0.r0
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxUsbCardReaderR3.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxVRDP.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxPuelMain.so
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxPciRawR0.r0
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxEhciRC.rc
+	opt/VirtualBox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/linux.amd64/VBoxEhciR3.so
+	opt/VirtualBox/VBoxDD2R0.r0
+	opt/VirtualBox/VMMR0.r0
+	opt/VirtualBox/VBoxDD2RC.rc
+	opt/VirtualBox/VBoxDDR0.r0
+	opt/VirtualBox/VBoxDDRC.rc
+	opt/VirtualBox/VMMRC.rc"
 
 PYTHON_UPDATER_IGNORE="1"
 
@@ -248,7 +271,7 @@ src_install() {
 		fperms 0750 /opt/VirtualBox/kchmviewer
 	fi
 
-	# This ebuild / package supports only py2.7.  When py3 comes is unknown.
+	# This ebuild / package supports only py2.7. When py3 comes is unknown.
 	# The compile phase makes VBoxPython2_7.so.
 	# py3 support would presumably require a binary pre-compiled by py3.
 	use python && doins VBoxPython.so VBoxPython2_7.so
