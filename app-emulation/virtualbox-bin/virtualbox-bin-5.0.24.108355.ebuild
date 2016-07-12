@@ -46,11 +46,11 @@ if [[ "${PV}" != *beta* ]] ; then
 fi
 
 DEPEND="app-arch/unzip
-	 app-emulation/virtualbox-modules
 	${PYTHON_DEPS}"
 
 RDEPEND="!!app-emulation/virtualbox
 	!app-emulation/virtualbox-additions
+	app-emulation/virtualbox-modules
 	!headless? (
 		x11-libs/libXcursor
 		media-libs/libsdl[X]

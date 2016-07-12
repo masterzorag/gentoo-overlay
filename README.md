@@ -7,6 +7,7 @@
 Add an entry to /etc/portage/repos.conf:
 
 [masterzorag]
+
 location = /usr/local/portage
 
 sync-uri = https://github.com/masterzorag/gentoo-overlay.git
