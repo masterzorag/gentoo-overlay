@@ -227,6 +227,10 @@ src_install() {
 		popd &>/dev/null || die
 
 		newmenu "${FILESDIR}"/${PN}.desktop-2 ${PN}.desktop
+
+		# set up symlinks, as requested here:
+		# https://bugs.gentoo.org/show_bug.cgi?id=572012
+		dosym /opt/VirtualBox/virtualbox.xml /usr/share/mime/packages/virtualbox.xml
 	fi
 
 	pushd "${S}"/${EXTP_PN} &>/dev/null || die
