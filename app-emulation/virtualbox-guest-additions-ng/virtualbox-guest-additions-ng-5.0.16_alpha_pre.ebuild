@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils
 
@@ -28,24 +28,14 @@ RDEPEND="
 	 !app-emulation/virtualbox-extpack-oracle
 	 !app-emulation/virtualbox-guest-additions
 	 !app-emulation/virtualbox-modules
-	 !x11-drivers/xf86-video-virtualbox"
-
-DEPEND="
-	sys-apps/dbus[X(+)]
-	x11-libs/libXrandr"
+	 !x11-drivers/xf86-video-virtualbox
+	 sys-apps/dbus[X(+)]
+	 x11-libs/libXrandr"
 
 S="${WORKDIR}"
 
 pkg_setup()
 {
-    return
-}
-
-src_unpack() {
-    return
-}
-
-src_prepare() {
     return
 }
 
