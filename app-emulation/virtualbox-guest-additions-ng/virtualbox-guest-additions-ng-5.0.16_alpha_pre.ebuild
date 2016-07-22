@@ -11,7 +11,7 @@ MY_PN=VBoxGuestAdditions
 MY_PV="${PV/_alpha_pre/}"
 MY_P=${MY_PN}_${MY_PV}
 
-DESCRIPTION="Next-gen Additionsinstaller for VirtualBox gentoo guests"
+DESCRIPTION="Next-gen Additions installer for VirtualBox gentoo guests"
 HOMEPAGE="http://www.virtualbox.org/"
 SRC_URI="http://download.virtualbox.org/virtualbox/${MY_PV}/${MY_P}.iso"
 
@@ -22,18 +22,18 @@ IUSE=""
 RESTRICT="mirror"
 
 RDEPEND="
-	 !!app-emulation/virtualbox
-	 !=app-emulation/virtualbox-9999
-		!app-emulation/virtualbox-bin
-		!app-emulation/virtualbox-extpack-oracle
-		!app-emulation/virtualbox-guest-additions
-		!app-emulation/virtualbox-modules
-		!x11-drivers/xf86-video-virtualbox"
+	!!app-emulation/virtualbox
+	!=app-emulation/virtualbox-9999
+	 !app-emulation/virtualbox-bin
+	 !app-emulation/virtualbox-extpack-oracle
+	 !app-emulation/virtualbox-guest-additions
+	 !app-emulation/virtualbox-modules
+	 !x11-drivers/xf86-video-virtualbox"
 
 DEPEND="
 	sys-apps/dbus[X(+)]
 	x11-libs/libXrandr"
-			
+
 S="${WORKDIR}"
 
 pkg_setup()
@@ -50,11 +50,11 @@ src_prepare() {
 }
 
 src_install() {
-		insinto /tmp/${PN/-additions}
-		newins "${DISTDIR}"/${MY_P}.iso ${MY_PN}.iso
+	insinto /tmp/${PN/-additions}
+	newins "${DISTDIR}"/${MY_P}.iso ${MY_PN}.iso
 
-		exeinto /tmp/${PN/-additions}
-		newexe "${FILESDIR}/autorun.sh" run.sh || die "Install failed!"
+	exeinto /tmp/${PN/-additions}
+	newexe "${FILESDIR}/autorun.sh" run.sh || die "Install failed!"
 }
 
 pkg_preinst()
@@ -64,13 +64,13 @@ pkg_preinst()
 
 pkg_postinst()
 {
-		# run the script
-		/tmp/${PN/-additions}/run.sh || die "Autorun of script failed!"
+	# run the script
+	/tmp/${PN/-additions}/run.sh || die "Autorun of script failed!"
 
-		# clean up temp files
-		[[ -d "/tmp/${PN/-additions}" ]] && rm -rf "/tmp/${PN/-additions}"
+	# clean up temp files
+	[[ -d "/tmp/${PN/-additions}" ]] && rm -rf "/tmp/${PN/-additions}"
 
-		return
+	return
 }
 
 pkg_prerm() {
