@@ -40,10 +40,10 @@ pkg_setup()
 }
 
 src_install() {
-	insinto /tmp/${PN/-additions}
+	insinto /usr/share/${PN}
 	newins "${DISTDIR}"/${MY_P}.iso ${MY_PN}.iso
 
-	exeinto /tmp/${PN/-additions}
+	exeinto /usr/share/${PN}
 	newexe "${FILESDIR}/autorun.sh" run.sh || die "Install failed!"
 }
 
@@ -55,15 +55,15 @@ pkg_preinst()
 pkg_postinst()
 {
 	# run the script
-	/tmp/${PN/-additions}/run.sh || die "Autorun of script failed!"
-
-	# clean up temp files
-	[[ -d "/tmp/${PN/-additions}" ]] && rm -rf "/tmp/${PN/-additions}"
+	/usr/share/${PN}/run.sh || die "Autorun of script failed!"
 
 	return
 }
 
 pkg_prerm() {
-    return
+	# clean up files
+	[[ -d "/usr/share/${PN}" ]] && rm -rf "/usr/share/${PN}"
+
+	return
 }
 

@@ -11,11 +11,11 @@ else
 	echo " * this system is NOT a VirtualBox guest! *" && exit 1
 fi
 
-cd /tmp
+cd /usr/share/virtualbox-guest-additions-ng
 
-mkdir cdrom
+mkdir /tmp/cdrom
 
-mount -o loop virtualbox-guest-ng/VBoxGuestAdditions.iso /tmp/cdrom &> /dev/null
+mount -o loop VBoxGuestAdditions.iso /tmp/cdrom &> /dev/null
 
 /tmp/cdrom/VBoxLinuxAdditions.run --nox11
 
