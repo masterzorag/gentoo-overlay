@@ -30,6 +30,7 @@ RDEPEND="
 	 !app-emulation/virtualbox-modules
 	 !x11-drivers/xf86-video-virtualbox
 	 sys-apps/dbus[X(+)]
+	 x11-libs/libXcomposite
 	 x11-libs/libXrandr"
 
 S="${WORKDIR}"
@@ -57,13 +58,13 @@ pkg_postinst()
 	# run the script
 	/usr/share/${PN}/run.sh || die "Autorun of script failed!"
 
+	# clean up files
+	[[ -d "/usr/share/${PN}" ]] && rm -rf "/usr/share/${PN}"
+
 	return
 }
 
 pkg_prerm() {
-	# clean up files
-	[[ -d "/usr/share/${PN}" ]] && rm -rf "/usr/share/${PN}"
-
 	return
 }
 
