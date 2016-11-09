@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
 	>=dev-lang/yasm-0.6.2
 	>=sys-devel/gcc-4.9.0
-	sys-libs/pam
 	sys-power/iasl
 	x11-proto/fontsproto
 	x11-proto/randrproto
@@ -76,13 +75,17 @@ pkg_setup() {
 
 src_prepare() {
 	# Prepare the vboxvideo_drm Makefiles and build dir
-	eapply "${FILESDIR}"/${P}-Makefile.module.kms.patch
+	eapply "${FILESDIR}"/${PN}-5.1.4-Makefile.module.kms.patch
 
 	# Remove shipped binaries (kBuild,yasm), see bug #232775
 	rm -r kBuild/bin tools || die
 
 	# Disable things unused or splitted into separate ebuilds
 	cp "${FILESDIR}/${PN}-5-localconfig" LocalConfig.kmk || die
+
+	# Remove pointless GCC version limitations in check_gcc()
+	sed -e "/\s*-o\s*\\\(\s*\$cc_maj\s*-eq\s*[5-9]\s*-a\s*\$cc_min\s*-gt\s*[0-5]\s*\\\)\s*\\\/d" \
+		-i configure || die
 
 	default
 
@@ -126,7 +129,7 @@ src_compile() {
 	use dri && targets+=( Additions/linux/drm )
 
 	for each in ${targets[@]} ; do
-		pushd "${S}"/src/VBox/${each} $>/dev/null || die
+		pushd "${S}"/src/VBox/${each} &>/dev/null || die
 		MAKE="kmk" \
 		emake TOOL_YASM_AS=yasm \
 		VBOX_USE_SYSTEM_XORG_HEADERS=1 \
