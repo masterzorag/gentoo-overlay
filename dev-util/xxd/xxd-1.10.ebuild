@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit eutils
-
 MY_P=xxd-src-${PV}
 DESCRIPTION="make a hexdump or do the reverse"
 HOMEPAGE="http://ftp.uni-erlangen.de/pub/utilities/etc/?order=s"
@@ -13,12 +11,16 @@ SRC_URI="https://github.com/masterzorag/gentoo-overlay/raw/master/dev-util/xxd/$
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="*"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RDEPEND="
+  !app-editors/vim
+  !app-editors/vim-core"
+
 src_install() {
-	exeinto /bin
-	newexe xxd xxd || die "Install failed!"
-	
+	exeinto /usr/bin
+	newexe xxd xxd
+
 	doman xxd.1
 }
